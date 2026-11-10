@@ -605,15 +605,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <img src="./images/Upcoming/event1.jpg" alt="First Event Title" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div style="padding: 20px;">
-                        <h4 style="color: #009ccb; margin-bottom: 10px; font-weight: bold;">First Event Title</h4>
+                        <h4 style="color: #009ccb; margin-bottom: 10px; font-weight: bold;">Autumn Workshop</h4>
                         <p style="color: #666; margin-bottom: 10px;">
                             <i class="fa fa-calendar"></i> <strong>September 20TH - 26TH, 2026</strong>
                         </p>
                         <p style="color: #666; margin-bottom: 10px;">
-                            <i class="fa fa-map-marker"></i> <strong>Main Auditorium, City Center</strong>
+                            <i class="fa fa-map-marker"></i> <strong>Manchester City</strong>
                         </p>
                         <p style="color: #858585; margin-bottom: 15px; line-height: 1.6;">
-                            This is a short preview of the event description. Join us for a wonderful time of learning and networking...
+                                                               Specialized technical training program to build capacity of participants (Role players) involved in the implementation of institutional public sector financial management reforms.
+
                         </p>
                         
                         <!-- Action Buttons -->
@@ -633,7 +634,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="eventModalLabel1">First Event Title</h5>
+                            <h5 class="modal-title" id="eventModalLabel1">Autumn Workshop</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -645,11 +646,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div style="margin-bottom: 15px;">
                                 <p style="color: #666; margin-bottom: 10px;">
                                     <i class="fa fa-calendar" style="color: #009ccb; margin-right: 8px;"></i> 
-                                    <strong>Date:</strong> August 23RD - 29TH, 2026 <strong>First Batch</strong>
+                                    <strong>Date:</strong> November 29TH -December 5TH, 2026 <strong>First Batch</strong>
                                 </p>
                                 <p style="color: #666; margin-bottom: 10px;">
                                     <i class="fa fa-calendar" style="color: #009ccb; margin-right: 8px;"></i> 
-                                    <strong>Date:</strong> September 20TH - 26TH, 2026 <strong>Second Batch</strong>
+                                    <strong>Date:</strong> December 5TH - December 12TH, 2026 <strong>Second Batch</strong>
                                 </p>
                                 <p style="color: #666; margin-bottom: 10px;">
                                     <i class="fa fa-map-marker" style="color: #009ccb; margin-right: 8px;"></i> 
@@ -659,7 +660,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div style="margin-bottom: 15px;">
                                 <h6 style="color: #009ccb; font-weight: bold; margin-bottom: 10px;">Event Details</h6>
                                 <p style="color: #666; line-height: 1.8;">
-                                    This is the full description of the event. Join us for a wonderful time of learning, networking, and community building. We have an exciting lineup of speakers and activities planned for all attendees.
+                                    Specialized technical training program to build capacity of participants (Role players) involved in the implementation of institutional public sector financial management reforms.
                                 </p>
                             </div>
                         </div>
@@ -674,15 +675,88 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </section>
 
+<section id="past-events" class="page-section">
+    <div class="container">
+        <div class="heading text-center">
+            <h2>Past Events</h2>
+            <label for="past-event-select">Choose a past event</label>
+            <div style="max-width: 360px; margin: 12px auto 24px;">
+                <select id="past-event-select" class="form-control" aria-controls="past-event-details">
+                    <option value="" selected>Close</option>
+                    <option value="first-batch">Summer Workshops 2026 - First Batch</option>
+                    <option value="second-batch">Summer Workshops 2026 - Second Batch</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" id="past-event-details" hidden>
+            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                <article class="event-card" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <a href="./images/Past/event2.jpg" target="_blank" rel="noopener" aria-label="View the full Summer Workshops 2026 poster">
+                        <img src="./images/Past/event2.jpg" alt="Funtro International Company Summer Workshops 2026 poster" style="width: 100%; height: auto; display: block;">
+                    </a>
+                    <div style="padding: 20px;">
+                        <h4 id="past-event-title" style="color: #009ccb; margin-bottom: 10px; font-weight: bold;">Summer Workshops 2026</h4>
+                        <p style="color: #666; margin-bottom: 10px;">
+                            <i class="fa fa-calendar"></i> <strong id="past-event-date"></strong>
+                        </p>
+                        <p style="color: #666; margin-bottom: 10px;">
+                            <i class="fa fa-map-marker"></i> <strong>Manchester City, UK</strong>
+                        </p>
+                        <p style="color: #858585; margin-bottom: 0; line-height: 1.6;">
+                            A specialized technical training program focused on public-sector financial management reforms, delivered in two batches.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- JavaScript to auto-open modal based on URL hash and handle sharing -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    const pastEventSelect = document.getElementById('past-event-select');
+    if(pastEventSelect) {
+        pastEventSelect.addEventListener('change', function() {
+            const eventDetails = document.getElementById('past-event-details');
+            const eventTitle = document.getElementById('past-event-title');
+            const eventDate = document.getElementById('past-event-date');
+            const eventBatches = {
+                'first-batch': {
+                    title: 'Summer Workshops 2026 - First Batch',
+                    date: 'August 23 - 29, 2026'
+                },
+                'second-batch': {
+                    title: 'Summer Workshops 2026 - Second Batch',
+                    date: 'September 20 - 26, 2026'
+                }
+            };
+            const selectedEvent = eventBatches[this.value];
+
+            if(selectedEvent) {
+                eventTitle.textContent = selectedEvent.title;
+                eventDate.textContent = selectedEvent.date;
+                eventDetails.hidden = false;
+            } else {
+                eventDetails.hidden = true;
+            }
+        });
+    }
+
     // 1. Check if URL contains a modal hash on page load and open it automatically
     if(window.location.hash) {
         let hash = window.location.hash;
         if($(hash).hasClass('modal')) {
             $(hash).modal('show');
         }
+    }
+
+    if(!window.location.hash || !$(window.location.hash).hasClass('modal')) {
+        window.setTimeout(function() {
+            if(!$('.modal.in').length) {
+                $('#eventModal1').modal('show');
+            }
+        }, 5000);
     }
 
     // 2. Clear hash when modal is closed so the URL goes back to normal
